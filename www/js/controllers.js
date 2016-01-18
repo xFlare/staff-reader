@@ -1,6 +1,6 @@
 angular.module('starter.controllers',[])
 
-.controller('HomeCtrl', ['$scope', 'http', function($scope, $http){
+.controller('HomeCtrl', ['$scope', '$http', '$ionicPlatform', '$cordovaFile', function($scope, $http, $ionicPlatform, $cordovaFile){
     
    function getParameter(name) {
       name = name.replace(/\[]/, "\\\[").replace(/[\]]/, "\\\]");
@@ -13,31 +13,32 @@ angular.module('starter.controllers',[])
     var VexDocument = null;
     var VexFormatter = null;
     
-    $(document).ready(function() {
-    //   var req = new XMLHttpRequest();
-    //   var uri = getParameter('doc');
-    //   console.log(uri);
-    //   if (! uri) uri = 'assets/bach_bwv846p.xml';
-    //   req.open('GET', uri, true);
-    //   req.onreadystatechange = function() {
-    //   if (req.readyState != 4) return;
-       
-    //    try {
-    //       VexDocument = new Vex.Flow.Document(req.responseText);
-    //     }
-    //     catch (e) {
-    //       $(".content")[0].innerHTML = "There was an error with the document.";
-    //       console.log(e);
-    //     }
-    //     var content = $(".content")[0];
-    //     if (VexDocument) {
-    //       VexFormatter = VexDocument.getFormatter();
-    //       VexFormatter.draw(content);
-    //     }
-        
-    //   };
-    //   req.send(null);
+    $scope.test = function(){
+         $ionicPlatform.ready(function(){
+         $cordovaFile.readAsText("file:///android_asset/www/assets/",'bach_bwv846p.xml')
+         .then(function(success){
+            //  console.log(success);
+             try {
+          VexDocument = new Vex.Flow.Document(success);
+        }
+        catch (e) {
+          $(".content")[0].innerHTML = "There was an error with the document.";
+          console.log(e);
+        }
+        var content = $(".content")[0];
+        if (VexDocument) {
+          VexFormatter = VexDocument.getFormatter();
+          VexFormatter.draw(content);
+        }
+         },function(error){
+             console.log(error);
+         })
+
     });
+    }
+    
+   
+    
     
 }])
 
