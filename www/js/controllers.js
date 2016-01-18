@@ -46,10 +46,21 @@ angular.module('starter.controllers',[])
     
 }])
 
-.controller('KeyCtrl', ['$scope', function($scope){
+.controller('KeyCtrl', ['$scope', 'configuration', function($scope, configuration){
+    console.log(configuration.getKey());
+    $scope.choice = configuration.getKey();
+    $scope.change = function(key){
+       configuration.setKey(key);
+    }
+    
     
 }])
 
-.controller('TimeSignatureCtrl', ['$scope', function($scope){
+.controller('TimeSignatureCtrl', ['$scope', 'configuration', function($scope, configuration){
+     console.log(configuration.getTimeSignature());
+    $scope.time = configuration.getTimeSignature();
+    $scope.change = function(time){
+        configuration.setTimeSignature(time);
+    }
     
 }]);

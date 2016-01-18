@@ -1,11 +1,11 @@
 <ion-view view-title="Key">
     <ion-content>
         <ion-list>
-        <ion-radio ng-model="choice" ng-value="'C'">C Major</ion-radio>
-        <ion-radio ng-model="choice" ng-value="'G'">G Major</ion-radio>
-        <ion-radio ng-model="choice" ng-value="'D'">D Major</ion-radio>
-        <ion-radio ng-model="choice" ng-value="'E'">E Major</ion-radio>
-        <ion-radio ng-model="choice" ng-value="'B'">B Major</ion-radio>
+        <ion-radio ng-model="choice" ng-value="'C'" ng-click="change('C')">C Major</ion-radio>
+        <ion-radio ng-model="choice" ng-value="'G'" ng-click="change('G')">G Major</ion-radio>
+        <ion-radio ng-model="choice" ng-value="'D'" ng-click="change('D')">D Major</ion-radio>
+        <ion-radio ng-model="choice" ng-value="'E'" ng-click="change('E')">E Major</ion-radio>
+        <ion-radio ng-model="choice" ng-value="'B'" ng-click="change('B')">B Major</ion-radio>
 </ion-list>
     </ion-content>
 </ion-view>
