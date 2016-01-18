@@ -44,4 +44,12 @@ angular.module('starter.controllers',[])
 
 .controller('SettingCtrl', ['$scope', function($scope){
     
+}])
+
+.controller('KeyCtrl', ['$scope', function($scope){
+    
+}])
+
+.controller('TimeSignatureCtrl', ['$scope', function($scope){
+    
 }]);

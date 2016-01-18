@@ -35,6 +35,16 @@ app.config(function($stateProvider, $urlRouterProvider){
         templateUrl:'templates/settings.html',
         controller:'SettingCtrl'
     })
+    .state('key',{
+        url:'/key',
+        templateUrl:'templates/key.html',
+        controller:'KeyCtrl'
+    })
+    .state('time-signature',{
+        url:'/time-signature',
+        templateUrl:'templates/time-signature.html',
+        controller:'TimeSignatureCtrl'
+    })
     
     $urlRouterProvider.otherwise('/home');
 });
