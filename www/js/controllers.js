@@ -2,47 +2,21 @@ angular.module('starter.controllers',[])
 
 .controller('HomeCtrl', ['$scope', 'x2js', '$http', '$ionicPlatform', '$cordovaFile', function($scope, x2js, $http, $ionicPlatform, $cordovaFile){
     
-//    function getParameter(name) {
-//       name = name.replace(/\[]/, "\\\[").replace(/[\]]/, "\\\]");
-//       var regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
-//       var results = regex.exec(window.location.search);
-//       if (results == null) return undefined;
-//       else return decodeURIComponent(results[1].replace(/\+/g, " "));
-//     } 
-    
     var VexDocument = null;
     var VexFormatter = null;
     
     $scope.test = function(){
          $ionicPlatform.ready(function(){
-    //      $cordovaFile.readAsText("file:///android_asset/www/assets/",'bach_bwv846p.xml')
-    //      .then(function(success){
-    //         //  console.log(success);
-    //          try {
-    //       VexDocument = new Vex.Flow.Document(success);
-    //     }
-    //     catch (e) {
-    //       $(".content")[0].innerHTML = "There was an error with the document.";
-    //       console.log(e);
-    //     }
-    //     var content = $(".content")[0];
-    //     if (VexDocument) {
-    //       VexFormatter = VexDocument.getFormatter();
-    //       VexFormatter.draw(content);
-    //     }
-    //      },function(error){
-    //          console.log(error);
-    //      })
     
   var helloworld = {
-      "score-partwise"{
+      "score-partwise":{
           "_version":"3.0",
           "part-list":{
-              "score-part"{
+              "score-part":{
                   "_id":"P1",
                   "part-name":"Music",
               }//end score-part
-          },                                    //end part-list
+          },//end part-list
          "part":{
              "_id":"P1",
              "measure":{
@@ -73,6 +47,39 @@ angular.module('starter.controllers',[])
          }//end part
       }//end score-partwise
   }
+  
+    //    $cordovaFile.readAsText("file:///android_asset/www/assets/",'bach_bwv846p.xml')
+    //      .then(function(success){
+    //         //  console.log(success);
+    //          try {
+    //       VexDocument = new Vex.Flow.Document(success);
+    //     }
+    //     catch (e) {
+    //       $(".content")[0].innerHTML = "There was an error with the document.";
+    //       console.log(e);
+    //     }
+    //     var content = $(".content")[0];
+    //     if (VexDocument) {
+    //       VexFormatter = VexDocument.getFormatter();
+    //       VexFormatter.draw(content);
+    //     }
+    //      },function(error){
+    //          console.log(error);
+    //      })
+    
+     try {
+          VexDocument = new Vex.Flow.Document(x2js.json2xml_str(helloworld));
+        }
+        catch (e) {
+          $(".content")[0].innerHTML = "There was an error with the document.";
+          console.log(e);
+        }
+        var content = $(".content")[0];
+        if (VexDocument) {
+          VexFormatter = VexDocument.getFormatter();
+          VexFormatter.draw(content);
+        }
+    
   
   var xmlText = "<MyOperation myAttr='SuccessAttrValue'>MyText</MyOperation>";
     console.log(x2js.json2xml_str(obj));
