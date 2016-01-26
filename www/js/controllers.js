@@ -24,7 +24,7 @@ angular.module('starter.controllers',[])
                  "attributes":{
                      "division":"1",
                      "key":{
-                         "fifths":"0",
+                         "fifths":"-1",
                      },//end key
                      "time":{
                          "_symbol":"commom",
@@ -121,27 +121,11 @@ angular.module('starter.controllers',[])
       }//end score-partwise
   }
   
-       $cordovaFile.readAsText("file:///android_asset/www/assets/",'hello.txt')
-         .then(function(success){
-            //  console.log(success);
-             try {
-          VexDocument = new Vex.Flow.Document(success);
-        }
-        catch (e) {
-          $(".content")[0].innerHTML = "There was an error with the document.";
-          console.log(e);
-        }
-        var content = $(".content")[0];
-        if (VexDocument) {
-          VexFormatter = VexDocument.getFormatter();
-          VexFormatter.draw(content);
-        }
-         },function(error){
-             console.log(error);
-         })
-    
-    //  try {
-    //       VexDocument = new Vex.Flow.Document(x2js.json2xml_str(helloworld));
+    //    $cordovaFile.readAsText("file:///android_asset/www/assets/",'hello.txt')
+    //      .then(function(success){
+    //         //  console.log(success);
+    //          try {
+    //       VexDocument = new Vex.Flow.Document(success);
     //     }
     //     catch (e) {
     //       $(".content")[0].innerHTML = "There was an error with the document.";
@@ -152,6 +136,22 @@ angular.module('starter.controllers',[])
     //       VexFormatter = VexDocument.getFormatter();
     //       VexFormatter.draw(content);
     //     }
+    //      },function(error){
+    //          console.log(error);
+    //      })
+    
+     try {
+          VexDocument = new Vex.Flow.Document(x2js.json2xml_str(helloworld));
+        }
+        catch (e) {
+          $(".content")[0].innerHTML = "There was an error with the document.";
+          //console.log(e);
+        }
+        var content = $(".content")[0];
+        if (VexDocument) {
+          VexFormatter = VexDocument.getFormatter();
+          VexFormatter.draw(content);
+        }
     
   
 //   var xmlText = "<MyOperation myAttr='SuccessAttrValue'>MyText</MyOperation>";
