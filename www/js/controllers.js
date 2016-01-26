@@ -34,33 +34,51 @@ angular.module('starter.controllers',[])
     //          console.log(error);
     //      })
     
-    var xmlText = "<MyOperation myAttr='SuccessAttrValue'>MyText</MyOperation>";
-    console.log(x2js.xml_str2json( xmlText ));
-    
-    var jsonobj = {"name": "Dolphin Dance","events": [
-        [2,   "note", 76, 0.8, 0.5],
-        [2.5, "note", 77, 0.6, 0.5],
-        [3,   "note", 79, 1, 0.5],
-        [3.5, "note", 74, 1, 3.5],
-        [10,  "note", 76, 1, 0.5],
-        [0, "chord", "C", "∆", 4],
-        [4, "chord", "G", "-", 4]
-    ],
-    "interpretation": {
-        "time_signature": "4/4",
-        "key": "C",
-        "transpose": 0
-    }
-    };
-    console.log(x2js.json2xml_str(jsonobj));
-
+  var helloworld = {
+      "score-partwise"{
+          "_version":"3.0",
+          "part-list":{
+              "score-part"{
+                  "_id":"P1",
+                  "part-name":"Music",
+              }//end score-part
+          },                                    //end part-list
+         "part":{
+             "_id":"P1",
+             "measure":{
+                 "_number":"1",
+                 "attributes":{
+                     "division":"1",
+                     "key":{
+                         "fifths":"0",
+                     },//end key
+                     "time":{
+                         "beats":"4",
+                         "beat-type":"4"
+                     },//end time
+                     "clef":{
+                         "sign":"G",
+                         "line":"2",
+                     },//end clef
+                 },//end attributes
+                 "note":{
+                     "pitch":{
+                         "step":"C",
+                         "octave":"4",
+                     },//end pitch
+                     "duration":"4",
+                     "type":"whole",
+                 } //end note
+             }//end measure
+         }//end part
+      }//end score-partwise
+  }
+  
+  var xmlText = "<MyOperation myAttr='SuccessAttrValue'>MyText</MyOperation>";
+    console.log(x2js.json2xml_str(obj));
+    console.log(x2js.xml_str2json(xmlText));
      });
-    
     }
-    
-   
-    
-    
 }])
 
 .controller('SettingCtrl', ['$scope', function($scope){
