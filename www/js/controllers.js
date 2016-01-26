@@ -19,8 +19,57 @@ angular.module('starter.controllers',[])
           },//end part-list
          "part":{
              "_id":"P1",
-             "measure":{
+             "measure":[{
                  "_number":"1",
+                 "attributes":{
+                     "division":"1",
+                     "key":{
+                         "fifths":"0",
+                     },//end key
+                     "time":{
+                         "_symbol":"commom",
+                         "beats":"3",
+                         "beat-type":"4"
+                     },//end time
+                     "clef":{
+                         "sign":"G",
+                         "line":"2",
+                     },//end clef
+                 },//end attributes
+                 "note":{
+                     "pitch":{
+                         "step":"C",
+                         "octave":"4",
+                     },//end pitch
+                     "duration":"4",
+                     "type":"whole",
+                 } //end note
+             },{
+                 "_number":"2",
+                 "attributes":{
+                     "division":"4",
+                     "key":{
+                         "fifths":"0",
+                     },//end key
+                     "time":{
+                         "beats":"4",
+                         "beat-type":"4"
+                     },//end time
+                     "clef":{
+                         "sign":"G",
+                         "line":"2",
+                     },//end clef
+                 },//end attributes
+                 "note":{
+                     "pitch":{
+                         "step":"F",
+                         "octave":"4",
+                     },//end pitch
+                     "duration":"4",
+                     "type":"whole",
+                 } //end note 
+             },{
+                 "_number":"3",
                  "attributes":{
                      "division":"1",
                      "key":{
@@ -42,33 +91,41 @@ angular.module('starter.controllers',[])
                      },//end pitch
                      "duration":"4",
                      "type":"whole",
-                 } //end note
-             }//end measure
+                 } //end note 
+             },{
+                 "_number":"2",
+                 "attributes":{
+                     "division":"1",
+                     "key":{
+                         "fifths":"0",
+                     },//end key
+                     "time":{
+                         "beats":"4",
+                         "beat-type":"4"
+                     },//end time
+                     "clef":{
+                         "sign":"G",
+                         "line":"2",
+                     },//end clef
+                 },//end attributes
+                 "note":{
+                     "pitch":{
+                         "step":"C",
+                         "octave":"4",
+                     },//end pitch
+                     "duration":"4",
+                     "type":"whole",
+                 } //end note 
+             }]//end measure
          }//end part
       }//end score-partwise
   }
   
-    //    $cordovaFile.readAsText("file:///android_asset/www/assets/",'bach_bwv846p.xml')
-    //      .then(function(success){
-    //         //  console.log(success);
-    //          try {
-    //       VexDocument = new Vex.Flow.Document(success);
-    //     }
-    //     catch (e) {
-    //       $(".content")[0].innerHTML = "There was an error with the document.";
-    //       console.log(e);
-    //     }
-    //     var content = $(".content")[0];
-    //     if (VexDocument) {
-    //       VexFormatter = VexDocument.getFormatter();
-    //       VexFormatter.draw(content);
-    //     }
-    //      },function(error){
-    //          console.log(error);
-    //      })
-    
-     try {
-          VexDocument = new Vex.Flow.Document(x2js.json2xml_str(helloworld));
+       $cordovaFile.readAsText("file:///android_asset/www/assets/",'hello.txt')
+         .then(function(success){
+            //  console.log(success);
+             try {
+          VexDocument = new Vex.Flow.Document(success);
         }
         catch (e) {
           $(".content")[0].innerHTML = "There was an error with the document.";
@@ -79,11 +136,27 @@ angular.module('starter.controllers',[])
           VexFormatter = VexDocument.getFormatter();
           VexFormatter.draw(content);
         }
+         },function(error){
+             console.log(error);
+         })
+    
+    //  try {
+    //       VexDocument = new Vex.Flow.Document(x2js.json2xml_str(helloworld));
+    //     }
+    //     catch (e) {
+    //       $(".content")[0].innerHTML = "There was an error with the document.";
+    //       console.log(e);
+    //     }
+    //     var content = $(".content")[0];
+    //     if (VexDocument) {
+    //       VexFormatter = VexDocument.getFormatter();
+    //       VexFormatter.draw(content);
+    //     }
     
   
-  var xmlText = "<MyOperation myAttr='SuccessAttrValue'>MyText</MyOperation>";
-    console.log(x2js.json2xml_str(obj));
-    console.log(x2js.xml_str2json(xmlText));
+//   var xmlText = "<MyOperation myAttr='SuccessAttrValue'>MyText</MyOperation>";
+//     console.log(x2js.json2xml_str(obj));
+//     console.log(x2js.xml_str2json(xmlText));
      });
     }
 }])
