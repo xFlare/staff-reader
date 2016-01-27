@@ -337,6 +337,16 @@ angular.module('starter.services',[])
                 musicxml['score-partwise'].part.measure[i].attributes.time.beats = beat;
                 musicxml['score-partwise'].part.measure[i].attributes.time['beat-type'] = beatType;
                 
+                switch(beat){
+                    case "4":
+                    musicxml['score-partwise'].part.measure[i].note.type = "whole";
+                    break;
+                    case "2":
+                    musicxml['score-partwise'].part.measure[i].note.type = "half";
+                    break;
+                }
+                
+             
             }
         },
         getConfig:function(){
