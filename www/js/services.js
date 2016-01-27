@@ -283,7 +283,8 @@ angular.module('starter.services',[])
   }
 
     var key = 'C';
-    var timesignature = '3/4';
+    var beat = '4';
+    var beatType = '4';
     var currentKey = cprog;
     
     return {
@@ -294,10 +295,11 @@ angular.module('starter.services',[])
             key = val;
         },
         getTimeSignature:function(){
-            return timesignature;
+            return beat+'/'+beatType;
         },
-        setTimeSignature:function(val){
-            timesignature = val;
+        setTimeSignature:function(newBeat, newBeatType){
+            beat = newBeat;
+            beatType = newBeatType;
         },
         updateKey:function(){
              switch(key){
@@ -324,6 +326,16 @@ angular.module('starter.services',[])
 //   helloworld['score-partwise'].part.measure[0]._number="2";
 //   console.log(helloworld['score-partwise'].part.measure);
                 musicxml['score-partwise'].part.measure[i].note.pitch.step =currentKey[i]; 
+                
+            }
+        },
+        updateTimeSignature:function(){
+               for(var i = 0; i < 8; i++){
+                //this is used to change elements of the measure object  
+//   helloworld['score-partwise'].part.measure[0]._number="2";
+//   console.log(helloworld['score-partwise'].part.measure);
+                musicxml['score-partwise'].part.measure[i].attributes.time.beats = beat;
+                musicxml['score-partwise'].part.measure[i].attributes.time['beat-type'] = beatType;
                 
             }
         },
