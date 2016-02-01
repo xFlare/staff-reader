@@ -56,7 +56,62 @@ angular.module('starter.controllers',[])
           VexFormatter = VexDocument.getFormatter();
           VexFormatter.draw(content);
         }
-     })   
+     })
+     
+     $scope.click = function(){
+         var measure = {
+	"_number":"1",
+	"attributes":{
+	"division":"1",
+	 "key":{
+		 "fifths":"0",
+	 },//end key
+	 "time":{
+		 "_symbol":"commom",
+		 "beats":"4",
+		 "beat-type":"4"
+	 },//end time
+	 "clef":{
+		 "sign":"G",
+		 "line":"2",
+	 },//end clef
+	},
+	"note":[]
+}
+
+
+
+
+var notes = ["B","G",];
+console.log(notes.length);
+
+
+for(var i = 0; i < notes.length; i++){
+    //console.log(i);
+    //console.log(notes[i]);
+    console.log("excueted");
+    var ric = {
+	"pitch":{
+		 "step":"A",
+		 "octave":"4",
+	 },//end pitch
+	 "duration":"4",
+	 "type":"whole",
+        }
+
+     
+    ric.pitch.step = notes[i];
+    //measure.note.push(ric);
+   // console.log(measure.note);
+    //console.log(ric.pitch.step);
+    //console.log(ric);
+    //delete ric;
+    measure.note.push(ric);
+}
+console.log(measure);
+
+
+     }   
 }])
 
 .controller('SettingCtrl', ['$scope', function($scope){
