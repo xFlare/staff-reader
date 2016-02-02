@@ -50,6 +50,10 @@ app.config(function($stateProvider, $urlRouterProvider){
         templateUrl:'templates/time-signature.html',
         controller:'TimeSignatureCtrl'
     })
-    
+    .state('part',{
+        url:'/part',
+        templateUrl:'templates/part.html',
+        controller:'PartCtrl'
+    })
     $urlRouterProvider.otherwise('/home');
 });

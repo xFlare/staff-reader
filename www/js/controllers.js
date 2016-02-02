@@ -79,7 +79,7 @@ angular.module('starter.controllers',[])
 	"note":[]
 }
 
-
+var ric;
 
 
 var notes = ["B","G",];
@@ -90,7 +90,7 @@ for(var i = 0; i < notes.length; i++){
     //console.log(i);
     //console.log(notes[i]);
     console.log("excueted");
-    var ric = {
+    ric = {
 	"pitch":{
 		 "step":"A",
 		 "octave":"4",
@@ -150,5 +150,9 @@ console.log(measure);
         
         configuration.setTimeSignature(beat, beatType);
     }
+    
+}])
+
+.controller('PartCtrl',['$scope', function(){
     
 }]);
