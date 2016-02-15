@@ -2,12 +2,13 @@
     <ion-content>
         <label class="item item-input item-select">
     <div class="input-label">
-      Lightsaber
+      Number of Parts
     </div>
-    <select>
-      <option>Blue</option>
-      <option selected>Green</option>
-      <option>Red</option>
+    <select ng-model="mySelect" ng-change="updateSelect()">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
     </select>
   </label>
     </ion-content>

@@ -65,6 +65,40 @@ angular.module('starter.services',[])
     var eprog =[E.I,E.IV,E.I,E.V,E.I,E.IV,E.V,E.I];
     var bprog =[B.I,B.IV,B.I,B.V,B.I,B.IV,B.V,B.I];
     
+    var part = {
+        "_id":"P1",
+             "measure":[]
+    }
+    
+    var measure = {
+         "_number":"1",
+                 "attributes":{
+                     "division":"1",
+                     "key":{
+                         "fifths":"0",
+                     },//end key
+                     "time":{
+                         "_symbol":"commom",
+                         "beats":"4",
+                         "beat-type":"4"
+                     },//end time
+                     "clef":{
+                         "sign":"G",
+                         "line":"2",
+                     },//end clef
+                 },//end attributes
+                 "note":[]
+    }
+    
+    var note = {
+         "pitch":{
+            "step":"",
+            "octave":"4",
+        },//end pitch
+        "duration":"4",
+        "type":"whole",
+    }
+    
     //default musicxml json to build upon
     var musicxml = {
       "score-partwise":{
@@ -75,210 +109,7 @@ angular.module('starter.services',[])
                   "part-name":"Music",
               }//end score-part
           },//end part-list
-         "part":{
-             "_id":"P1",
-             "measure":[{
-                 "_number":"1",
-                 "attributes":{
-                     "division":"1",
-                     "key":{
-                         "fifths":"0",
-                     },//end key
-                     "time":{
-                         "_symbol":"commom",
-                         "beats":"4",
-                         "beat-type":"4"
-                     },//end time
-                     "clef":{
-                         "sign":"G",
-                         "line":"2",
-                     },//end clef
-                 },//end attributes
-                 "note":{
-                     "pitch":{
-                         "step":"",
-                         "octave":"4",
-                     },//end pitch
-                     "duration":"4",
-                     "type":"whole",
-                 } //end note
-             },{
-                 "_number":"2",
-                 "attributes":{
-                     "division":"1",
-                     "key":{
-                         "fifths":"0",
-                     },//end key
-                     "time":{
-                         "_symbol":"commom",
-                         "beats":"4",
-                         "beat-type":"4"
-                     },//end time
-                     "clef":{
-                         "sign":"G",
-                         "line":"2",
-                     },//end clef
-                 },//end attributes
-                 "note":{
-                     "pitch":{
-                         "step":"",
-                         "octave":"4",
-                     },//end pitch
-                     "duration":"4",
-                     "type":"whole",
-                 } //end note
-             },{
-                 "_number":"3",
-                 "attributes":{
-                     "division":"1",
-                     "key":{
-                         "fifths":"0",
-                     },//end key
-                     "time":{
-                         "_symbol":"commom",
-                         "beats":"4",
-                         "beat-type":"4"
-                     },//end time
-                     "clef":{
-                         "sign":"G",
-                         "line":"2",
-                     },//end clef
-                 },//end attributes
-                 "note":{
-                     "pitch":{
-                         "step":"",
-                         "octave":"4",
-                     },//end pitch
-                     "duration":"4",
-                     "type":"whole",
-                 } //end note
-             },{
-                 "_number":"4",
-                 "attributes":{
-                     "division":"1",
-                     "key":{
-                         "fifths":"0",
-                     },//end key
-                     "time":{
-                         "_symbol":"commom",
-                         "beats":"4",
-                         "beat-type":"4"
-                     },//end time
-                     "clef":{
-                         "sign":"G",
-                         "line":"2",
-                     },//end clef
-                 },//end attributes
-                 "note":{
-                     "pitch":{
-                         "step":"",
-                         "octave":"4",
-                     },//end pitch
-                     "duration":"4",
-                     "type":"whole",
-                 } //end note
-             },{
-                 "_number":"5",
-                 "attributes":{
-                     "division":"1",
-                     "key":{
-                         "fifths":"0",
-                     },//end key
-                     "time":{
-                         "_symbol":"commom",
-                         "beats":"4",
-                         "beat-type":"4"
-                     },//end time
-                     "clef":{
-                         "sign":"G",
-                         "line":"2",
-                     },//end clef
-                 },//end attributes
-                 "note":{
-                     "pitch":{
-                         "step":"",
-                         "octave":"4",
-                     },//end pitch
-                     "duration":"4",
-                     "type":"whole",
-                 } //end note
-             },{
-                 "_number":"6",
-                 "attributes":{
-                     "division":"1",
-                     "key":{
-                         "fifths":"0",
-                     },//end key
-                     "time":{
-                         "_symbol":"commom",
-                         "beats":"4",
-                         "beat-type":"4"
-                     },//end time
-                     "clef":{
-                         "sign":"G",
-                         "line":"2",
-                     },//end clef
-                 },//end attributes
-                 "note":{
-                     "pitch":{
-                         "step":"",
-                         "octave":"4",
-                     },//end pitch
-                     "duration":"4",
-                     "type":"whole",
-                 } //end note
-             },{
-                 "_number":"7",
-                 "attributes":{
-                     "division":"1",
-                     "key":{
-                         "fifths":"0",
-                     },//end key
-                     "time":{
-                         "_symbol":"commom",
-                         "beats":"4",
-                         "beat-type":"4"
-                     },//end time
-                     "clef":{
-                         "sign":"G",
-                         "line":"2",
-                     },//end clef
-                 },//end attributes
-                 "note":{
-                     "pitch":{
-                         "step":"",
-                         "octave":"4",
-                     },//end pitch
-                     "duration":"4",
-                     "type":"whole",
-                 } //end note
-             },{
-                 "_number":"8",
-                 "attributes":{
-                     "division":"1",
-                     "key":{
-                         "fifths":"0",
-                     },//end key
-                     "time":{
-                         "_symbol":"commom",
-                         "beats":"4",
-                         "beat-type":"4"
-                     },//end time
-                     "clef":{
-                         "sign":"G",
-                         "line":"2",
-                     },//end clef
-                 },//end attributes
-                 "note":{
-                     "pitch":{
-                         "step":"",
-                         "octave":"4",
-                     },//end pitch
-                     "duration":"4",
-                     "type":"whole",
-                 } //end note
-             }]//end measure
-         }//end part
+         "part":[]
       }//end score-partwise
   }
 
@@ -286,8 +117,15 @@ angular.module('starter.services',[])
     var beat = '4';
     var beatType = '4';
     var currentKey = cprog;
+    var parts = 1;
     
     return {
+        getParts:function() {
+            return parts;
+        },
+        setParts:function(udpParts) {
+            parts = udpParts;
+        },
         getKey:function(){
             return key;
         },

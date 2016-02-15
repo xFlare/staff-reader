@@ -36,7 +36,7 @@ angular.module('starter.controllers',[])
 // //     console.log(x2js.xml_str2json(xmlText));
 //      });
 //     }
-
+//build musicxml object on view entered and load it
 //call this function when home page is loaded
      $scope.$on('$ionicView.enter',function(){
          configuration.updateKey();
@@ -153,6 +153,12 @@ console.log(measure);
     
 }])
 
-.controller('PartCtrl',['$scope', function(){
+.controller('PartCtrl',['$scope', 'configuration', function($scope, configuration){
+    
+    //init from controller variable
+    $scope.$on('$ionicView.enter',function(){
+        
+        
+    })
     
 }]);
